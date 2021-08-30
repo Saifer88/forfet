@@ -1,23 +1,24 @@
-<p>Calcolare netto da fatturato</p>
-
-
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">Calcola il tuo netto</h5>
+      
 <form [formGroup]="invoice">
 
-    <label for="total">Fatturato annuo: </label>
-    <input id="total" type="text" formControlName="total"><br><br>
+    <label for="total" class="form-label">Fatturato annuo: </label>
+    <input class="form-control" id="total" type="text" formControlName="total">
+    <label for="redditPerc" class="form-label">Coefficiente di redditività: </label>
+    <input class="form-control" id="redditPerc" type="text" formControlName="redditPerc">
 
-    <label for="redditPerc">Coefficiente di redditività: </label>
-    <input id="redditPerc" type="text" formControlName="redditPerc"><br><br>
+    <label for="inpsLastYear" class="form-label">Inps anno precedente: </label>
+    <input class="form-control" id="inpsLastYear" type="text" formControlName="inpsLastYear">
 
-    <label for="inpsLastYear">Inps anno precedente: </label>
-    <input id="inpsLastYear" type="text" formControlName="inpsLastYear"><br><br>
-
-    <label for="type">Ambito lavorativo: </label>
-    <input id="type" type="text" formControlName="type"><br><br>
-
+    <label for="type" class="form-label">Ambito lavorativo: </label>
+    <input class="form-control" id="type" type="text" formControlName="type">
 
 </form>
-
+<p class="card-text">Usa il tool per calcolare il tuo neto.</p>
+</div>
+</div>
 
 <!--
 da a dsadsadas
