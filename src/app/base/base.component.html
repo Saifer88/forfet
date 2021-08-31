@@ -1,11 +1,16 @@
 <div class="card" style="width: 18rem;">
     <div class="card-body">
       <h5 class="card-title">Calcola il tuo netto</h5>
-      
-<form [formGroup]="invoice">
 
-    <label for="total" class="form-label">Fatturato annuo: </label>
-    <input class="form-control" id="total" type="text" formControlName="total">
+      <mat-form-field appearance="fill">
+        <mat-label>Input</mat-label>
+        <input matInput>
+      </mat-form-field>
+    <!--  
+<mat-form-field appearance="fill" [formGroup]="invoice">
+
+    <mat-label for="total" class="form-label">Fatturato annuo: </mat-label>
+    <input matInput class="form-control" id="total" type="text" formControlName="total">
     <label for="redditPerc" class="form-label">Coefficiente di redditività: </label>
     <input class="form-control" id="redditPerc" type="text" formControlName="redditPerc">
 
@@ -15,8 +20,8 @@
     <label for="type" class="form-label">Ambito lavorativo: </label>
     <input class="form-control" id="type" type="text" formControlName="type">
 
-</form>
-<p class="card-text">Usa il tool per calcolare il tuo neto.</p>
+</mat-form-field> -->
+<button mat-raised-button (click)="onSubmit()">Invio</button>
 </div>
 </div>
 

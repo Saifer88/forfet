@@ -22,4 +22,10 @@ export class BaseComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSubmit() {
+    return "ciao";
+  }
+
+
+
 }
