@@ -1,16 +1,21 @@
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatSortModule} from '@angular/material/sort';
+import {MatList, MatListModule} from '@angular/material/list';
+
 
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BaseComponent } from './base/base.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { from } from 'rxjs';
 
 @NgModule({
@@ -26,9 +31,14 @@ import { from } from 'rxjs';
       [{path: '', component: BaseComponent}]
     ),
     BrowserAnimationsModule,
-    NgbModule,
     MatButtonModule,
-    MatFormFieldModule
+    MatRadioModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatGridListModule,
+    MatSortModule,
+    MatListModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

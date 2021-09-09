@@ -1,31 +1,53 @@
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">Calcola il tuo netto</h5>
+<mat-grid-list cols="4" rowHeight="100px">
 
-      <mat-form-field appearance="fill">
-        <mat-label>Input</mat-label>
-        <input matInput>
-      </mat-form-field>
-    <!--  
-<mat-form-field appearance="fill" [formGroup]="invoice">
+<mat-grid-tile colspan="3" rowspan="1" style.background="lightblue">
+<mat-form-field appearance="outline">
+  <mat-label>Fatturato</mat-label>
+  <input matInput [(ngModel)]="gross">
+</mat-form-field>
+</mat-grid-tile>
+<mat-grid-tile colspan="1" rowspan="3">
+  <button  mat-raised-button color="primary">Calcola</button>
 
-    <mat-label for="total" class="form-label">Fatturato annuo: </mat-label>
-    <input matInput class="form-control" id="total" type="text" formControlName="total">
-    <label for="redditPerc" class="form-label">Coefficiente di redditività: </label>
-    <input class="form-control" id="redditPerc" type="text" formControlName="redditPerc">
+</mat-grid-tile>
 
-    <label for="inpsLastYear" class="form-label">Inps anno precedente: </label>
-    <input class="form-control" id="inpsLastYear" type="text" formControlName="inpsLastYear">
+<mat-grid-tile colspan="3" rowspan="1">
+<mat-form-field appearance="outline">
+  <mat-label>Coefficiente di Redditività</mat-label>
+  <input matInput [(ngModel)]="coef">
+</mat-form-field>
+</mat-grid-tile>
+<mat-grid-tile colspan="3" rowspan="1">
+  <mat-form-field appearance="outline">
+    <mat-label>Tassazione Inps %</mat-label>
+    <input matInput [(ngModel)]="inps">
+  </mat-form-field>
+  </mat-grid-tile>
+<mat-grid-tile colspan="3" rowspan="1">
+  <mat-radio-group class="radio-group" aria-label="Tassazione Irpef" [(ngModel)]="irpef">
+    <mat-radio-button class="radio-button" *ngFor="let tax of irpefRadioButtonValues" [value]="tax.value">
+      {{tax.label}}
+    </mat-radio-button>
+</mat-radio-group>
+</mat-grid-tile>
+<mat-grid-tile colspan="1" rowspan="3">
+  <mat-list>
+    <mat-list-item> Fatturato lordo annuo: {{gross}} </mat-list-item>
+    <mat-list-item> Coefficiente di Redditività: {{coef}} </mat-list-item>
+    <mat-list-item> Imponibile: {{imponibile || ""}} </mat-list-item>
+    <mat-list-item> Pagato irpef: {{payedIrpef || "0"}} </mat-list-item>
+    <mat-list-item> Pagato inps: {{payedInps || "0"}} </mat-list-item>
+    <mat-list-item> Netto annuo: {{net() || "0"}} </mat-list-item>
+   </mat-list>
+  </mat-grid-tile>
 
-    <label for="type" class="form-label">Ambito lavorativo: </label>
-    <input class="form-control" id="type" type="text" formControlName="type">
+<mat-grid-tile colspan="3" rowspan="1">
+<mat-form-field appearance="outline">
+  <mat-label>Spese detraibili anno precedente</mat-label>
+  <input matInput [(ngModel)]="spese">
+</mat-form-field>
+</mat-grid-tile>
 
-</mat-form-field> -->
-<button mat-raised-button (click)="onSubmit()">Invio</button>
-</div>
-</div>
 
-<!--
-da a dsadsadas
 
--->
+</mat-grid-list>
