@@ -9,6 +9,8 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatSortModule} from '@angular/material/sort';
 import {MatList, MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -17,11 +19,13 @@ import { AppComponent } from './app.component';
 import { BaseComponent } from './base/base.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { from } from 'rxjs';
+import { ForfetResultViewComponent } from './forfet-result-view/forfet-result-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BaseComponent
+    BaseComponent,
+    ForfetResultViewComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +42,8 @@ import { from } from 'rxjs';
     MatGridListModule,
     MatSortModule,
     MatListModule,
+    MatIconModule,
+    MatSelectModule,
     FormsModule
   ],
   providers: [],

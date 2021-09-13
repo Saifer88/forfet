@@ -1,7 +1,8 @@
 <mat-grid-list cols="4" rowHeight="100px">
 
 <mat-grid-tile colspan="3" rowspan="1" style.background="lightblue">
-<mat-form-field appearance="outline">
+<mat-form-field appearance="fill">
+  <mat-icon matSuffix>euro_symbol</mat-icon>
   <mat-label>Fatturato</mat-label>
   <input matInput [(ngModel)]="gross">
 </mat-form-field>
@@ -12,39 +13,38 @@
 </mat-grid-tile>
 
 <mat-grid-tile colspan="3" rowspan="1">
-<mat-form-field appearance="outline">
+<mat-form-field appearance="fill">
   <mat-label>Coefficiente di Redditività</mat-label>
+  <mat-icon matSuffix>%</mat-icon>
   <input matInput [(ngModel)]="coef">
 </mat-form-field>
 </mat-grid-tile>
 <mat-grid-tile colspan="3" rowspan="1">
-  <mat-form-field appearance="outline">
-    <mat-label>Tassazione Inps %</mat-label>
+  <mat-form-field appearance="fill">
+    <mat-label>Tassazione Inps</mat-label>
     <input matInput [(ngModel)]="inps">
+    <mat-icon matSuffix>%</mat-icon>
   </mat-form-field>
   </mat-grid-tile>
 <mat-grid-tile colspan="3" rowspan="1">
-  <mat-radio-group class="radio-group" aria-label="Tassazione Irpef" [(ngModel)]="irpef">
-    <mat-radio-button class="radio-button" *ngFor="let tax of irpefRadioButtonValues" [value]="tax.value">
-      {{tax.label}}
-    </mat-radio-button>
-</mat-radio-group>
+  <mat-form-field appearance="fill">
+    <mat-label>Tassazione Irpef</mat-label>
+    <mat-select class="right" [(value)]="irpef">
+      <mat-option class="right" *ngFor="let irpefValue of irpefValues" [value]="irpefValue.value">{{irpefValue.label}}</mat-option>
+    </mat-select>
+    <mat-icon matSuffix>%</mat-icon>
+  </mat-form-field>
 </mat-grid-tile>
 <mat-grid-tile colspan="1" rowspan="3">
-  <mat-list>
-    <mat-list-item> Fatturato lordo annuo: {{gross}} </mat-list-item>
-    <mat-list-item> Coefficiente di Redditività: {{coef}} </mat-list-item>
-    <mat-list-item> Imponibile: {{imponibile || ""}} </mat-list-item>
-    <mat-list-item> Pagato irpef: {{payedIrpef || "0"}} </mat-list-item>
-    <mat-list-item> Pagato inps: {{payedInps || "0"}} </mat-list-item>
-    <mat-list-item> Netto annuo: {{net() || "0"}} </mat-list-item>
-   </mat-list>
+  <app-forfet-result-view [gross]="gross" [coef]="coef" [spese]="spese" [inps]="inps" [irpef]="irpef"></app-forfet-result-view>
+
   </mat-grid-tile>
 
 <mat-grid-tile colspan="3" rowspan="1">
-<mat-form-field appearance="outline">
+<mat-form-field appearance="fill">
+  <mat-icon matSuffix>euro_symbol</mat-icon>
   <mat-label>Spese detraibili anno precedente</mat-label>
-  <input matInput [(ngModel)]="spese">
+  <input class="right" matInput [(ngModel)]="spese">
 </mat-form-field>
 </mat-grid-tile>
 
